@@ -1,0 +1,7 @@
+server:
+  ip: 172.18.26.71
+  port: 8081
+
+files:
+  upload:
+    path: C:/HJL/Code Project/saas/medical_image/data_upload/
