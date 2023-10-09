@@ -2,6 +2,12 @@ server:
   ip: 172.18.26.71
   port: 8081
 
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB #最大文件大小
+      max-request-size: 500MB #最大请求大小
+
 files:
   upload:
     path: C:/HJL/Code Project/saas/medical_image/data_upload/
