@@ -1,4 +1,4 @@
-package com.example.medical_backend.controller;
+package com.example.medical_backend.ler;
 
 
 import cn.hutool.core.io.FileUtil;
@@ -54,6 +54,23 @@ public class FileController {
         response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, StandardCharsets.UTF_8));
         response.setContentType("application/octet-stream");
 
+        // 读取文件的字节流
+        os.write(FileUtil.readBytes(uploadFile));
+        os.flush();
+        os.close();
+    }
+
+    /**
+     * 划线文件下载接口
+     */
+    @GetMapping("/download/data/{fileName}")
+    public void fetchData(@PathVariable String fileName, HttpServletResponse response) throws IOException {
+        // 根据文件的唯一标识码获取文件
+        File uploadFile = new File(fileUploadPath+"/data/" + fileName);
+        // 设置输出流的格式
+        ServletOutputStream os = response.getOutputStream();
+        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, StandardCharsets.UTF_8));
+        response.setContentType("application/octet-stream");
         // 读取文件的字节流
         os.write(FileUtil.readBytes(uploadFile));
         os.flush();
