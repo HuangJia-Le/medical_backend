@@ -3,11 +3,15 @@ package com.example.medical_backend;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
+
 @SpringBootApplication
 public class MedicalBackendApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(MedicalBackendApplication.class, args);
+        public static void main(String[] args) {
+            SpringApplication.run(MedicalBackendApplication.class, args);
+        }
     }
 
-}
+
+

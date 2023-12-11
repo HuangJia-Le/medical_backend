@@ -1,4 +1,4 @@
-package com.example.medical_backend.ler;
+package com.example.medical_backend.controller;
 
 
 import cn.hutool.core.io.FileUtil;
@@ -53,7 +53,6 @@ public class FileController {
         ServletOutputStream os = response.getOutputStream();
         response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, StandardCharsets.UTF_8));
         response.setContentType("application/octet-stream");
-
         // 读取文件的字节流
         os.write(FileUtil.readBytes(uploadFile));
         os.flush();
